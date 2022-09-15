@@ -17,13 +17,20 @@ public class Main {
         System.out.println("Задание 2");
 
         for (int i = 0; i < theFirstArray.length; i++) {
-            System.out.print(theFirstArray[i] + ", ");
+            theFirstArray[i] = i + 1;
+            if (i > 0) {
+                System.out.print(", ");
+            }
+                System.out.print(theFirstArray[i]);
         }
+        System.out.print("");
+
         System.out.println();
         for (double j = 0; j < theSecondArray.length; j++) {
             System.out.print(theSecondArray[(int) j] + ", ");
         }
         System.out.println();
+
         for (int k = 0; k < arbitraryArray.length; k++) {
             System.out.print(arbitraryArray[k] + ", ");
         }
@@ -31,12 +38,45 @@ public class Main {
         System.out.println();
         System.out.println("Задание 3");
 
+        int n = theFirstArray.length;
+        int temp;
 
-        System.out.print(theFirstArray[2] + ", " + theFirstArray[1] + ", " + theFirstArray[0]);
+        for (int i = 0; i < n / 2; i ++) {
+            temp = theFirstArray[n-i-1];
+            theFirstArray[n-i-1] = theFirstArray[i];
+            theFirstArray[i] = temp;
+        }
+        for (int i = 0; i < theFirstArray.length; i ++) {
+            System.out.print(theFirstArray[i] + ", ");
+        }
+
         System.out.println();
-        System.out.print(theSecondArray[2] + ", " + theSecondArray[1] + ", " + theSecondArray[0]);
+
+        double temp1;
+
+        for (int i = 0; i < n / 2; i ++) {
+            temp1 = theSecondArray[n-i-1];
+            theSecondArray[n-i-1] = theSecondArray[i];
+            theSecondArray[i] = temp1;
+        }
+        for (int i = 0; i < theSecondArray.length; i ++) {
+            System.out.print(theSecondArray[i] + ", ");
+        }
+
         System.out.println();
-        System.out.print(arbitraryArray[2] + ", " + arbitraryArray[1] + ", " + arbitraryArray[0]);
+
+        int n1 = arbitraryArray.length;
+        int temp2;
+
+        for (int i = 0; i < n1 / 2; i ++) {
+            temp1 = arbitraryArray[n-i-1];
+            arbitraryArray[n1-i-1] = arbitraryArray[i];
+            arbitraryArray[i] = (int) temp1;
+        }
+        for (int i = 0; i < arbitraryArray.length; i ++) {
+            System.out.print(arbitraryArray[i] + ", ");
+        }
+
     }
 
     public static void task2() {
